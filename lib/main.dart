@@ -5,21 +5,15 @@ import 'package:mpesa/models/riverpod.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-
-   MultiProvider(providers: [
-ChangeNotifierProvider(
-  create: (context)=>BottomProvider(),
-
-
-
-
-  ),
-  ChangeNotifierProvider(create: (context)=>BalanceProvider(),
-  child: MainApp(),),
-
-
-
-   ]);
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BottomProvider()),
+        ChangeNotifierProvider(create: (context) => BalanceProvider()),
+      ],
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
